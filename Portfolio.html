@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Antoine Duarte - BUT1 Info</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio - Antoine Duarte</div>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#projets">Projets</a></li>
+        </ul>
+    </nav>
+
+    <section id="accueil" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Portfolio <span class="highlight">Duarte Antoine</span></h1>
+            <p>BUT1 Informatique à Belfort</p>
+        </div>
+    </section>
+
+    <section id="projets" class="section">
+        <h2>Mes Traces</h2>
+        <div class="projects-grid">
+            <div class="project-card" onclick="openModal('trace1')">
+                <img src="img/trace1_test.png" alt="Projet" class="project-image">
+                <div class="project-content">
+                    <h3>Trace 1 : Test unitaire</h3>
+                    <p>Cliquez pour plus de détails</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="openModal('trace2')">
+                <img src="img/trace2_BDDflask.png" alt="Projet" class="project-image">
+                <div class="project-content">
+                    <h3>Trace 2 : Python, Flask et SQL</h3>
+                    <p>Cliquez pour plus de détails</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals pour chaque projet -->
+    <div id="modal-trace1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('trace1')">&times;</span>
+            <img src="img/trace1_test.png" alt="Trace 1" class="modal-image" onclick="toggleFullscreen(this)">
+            <div class="modal-text">
+                <h3>Trace 1 : Tests Unitaires - Projet Puissance 4</h3>
+                <p class="modal-description">
+                    Cette figure est une capture d'écran du projet que j'ai réalisé en groupe dans le cadre de la SAE, consistant à développer un jeu de type Puissance 4 basé sur le framework Boardifier. La capture présente un fichier de test nommé YellowPawnPotLookUnitTest.java, écrit et dévellopé grace l'IDE IntelliJ Idea. Ce fichier fait partie de l'architecture du projet et contient des tests unitaires visant à vérifier le bon fonctionnement d'une des classes de la vue graphique du jeu.<br><br>
+
+                    Les tests unitaires sont une pratique de développement logiciel permettant de vérifier, de manière automatisée, qu'une méthode ou un composant fonctionne comme prévu. Concrètement, il s'agit d'écrire du code qui appelle une méthode avec des paramètres donnés, puis de comparer le résultat obtenu avec celui attendu (appelé oracle). Cela permet notamment de s'assurer qu'une modification future ne casse pas le comportement d'une fonction existante. Cette capacité à prévenir les régressions est essentielle dans tout projet logiciel un tant soit peu complexe.<br><br>
+
+                    Dans notre cas, les tests écrits permettent de garantir que certains objets graphiques du jeu sont bien initialisés et se comportent comme attendu lorsqu'ils sont instanciés.<br><br>
+
+                    Ce test est relativement simple, mais il illustre que je maîtrise les bases de l'écriture de tests unitaires avec JUnit, en particulier l'utilisation des assertions comme assertNotNull() ou assertTrue() pour vérifier que les objets ont été correctement instanciés. Je montre également que je sais structurer un test dans une classe dédiée, suivre les conventions de nommage, et utiliser une classe interne simulant un environnement de test (ici TestContainer), preuve que je comprends comment isoler une unité de code à tester.<br><br>
+
+                    Je n'utilise pas encore Mockito dans ce fichier, mais je connais le principe : il permettrait de simuler des objets complexes, ce qui est utile pour tester des comportements dépendant de composants externes, comme le modèle du jeu ou l'état de la partie.<br><br>
+
+                    En bas à droite de la capture, on voit l'outil d'analyse de couverture de tests intégré à l'IDE. Il indique que 100 % du code de la classe YellowPawnPotLook est couvert par les tests, ce qui montre que les tests sont bien exécutés et pertinents. Globalement, notre projet atteignait environ 75 % de couverture totale du code, ce qui est un résultat satisfaisant pour un projet étudiant, même si certaines méthodes liées à l'affichage ne peuvent pas être testées facilement via JUnit.<br><br>
+
+                    Même si les tests fonctionnent correctement et que certaines classes sont entièrement couvertes, la qualité globale de la suite de tests pourrait être améliorée. Par exemple, beaucoup de méthodes ne sont testées que dans des cas simples, et certains comportements spécifiques (comme des cas limites ou des erreurs) ne sont pas encore couverts. Mon savoir-faire actuel reste encore basique sur certains aspects (tests d'interactions complexes, mocks avancés), mais cette SAE m'a permis de bien intégrer les principes fondamentaux du test unitaire et de les appliquer dans un cadre concret. La suite logique serait d'approfondir l'usage de bibliothèques comme Mockito, et de m'exercer à écrire des tests plus robustes et complets.
+                </p>
+                <button class="return-btn" onclick="closeModal('trace1')">Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-trace2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('trace2')">&times;</span>
+            <img src="img/trace2_BDDflask.png" alt="Trace 2" class="modal-image" onclick="toggleFullscreen(this)">
+            <div class="modal-text">
+                <h3>Trace 2 : Python, Flask et SQL</h3>
+                <p class="modal-description">
+                    Cette figure montre un extrait du projet <strong>Cablissimo</strong>, une application e-commerce développée en groupe dans le cadre d'une SAE. Ce site permet à des utilisateurs de consulter et acheter des câbles via une interface web développée avec <strong>Flask (Python)</strong> et une base de données <strong>SQL</strong>. La capture présente une partie du code backend qui gère la <strong>liste d'envies des clients</strong>.<br><br>
+
+                    La route /client/envie/add permet à un utilisateur connecté d'ajouter un article à sa liste. Le code commence par vérifier si l'article est déjà présent, grâce à une requête SELECT COUNT(*). Si c'est le cas, il est supprimé de la base via une requête DELETE. Sinon, l'article est ajouté avec la date courante grâce à une requête INSERT. Ce fonctionnement rend l'action idempotente : un second clic inverse le premier, ce qui simplifie l'expérience utilisateur.<br><br>
+
+                    Le script montre que je sais <strong>utiliser Flask pour créer des routes, gérer une session utilisateur</strong> avec session['id_user'], et <strong>exécuter des requêtes SQL paramétrées</strong> de manière sécurisée. La connexion à la base se fait via un curseur Python, démontrant que je maîtrise l'interaction entre un serveur Flask et une base de données. Cette trace prouve que je sais <strong>me connecter à une base de données SQL</strong> depuis une application Python et que je maîtrise l'environnement de développement <strong>PyCharm</strong> pour concevoir, tester et organiser mon code.<br><br>
+
+                    Cette fonctionnalité combine plusieurs compétences clés : conception de la logique métier, gestion conditionnelle, organisation modulaire, sécurité des requêtes, et structuration claire du code serveur. Elle représente un exemple concret d'intégration full-stack entre frontend et backend.<br><br>
+
+                    Enfin, cette trace met en lumière des pistes d'amélioration possibles : unifier les routes d'ajout et de suppression en une seule avec un paramètre d'action, optimiser les requêtes SQL avec INSERT ... ON DUPLICATE KEY UPDATE si le SGBD le permet, et intégrer des tests automatisés avec pytest-flask pour assurer la robustesse du code. Ce travail m'a permis de mettre en œuvre des compétences essentielles du développement web moderne dans un contexte collaboratif.
+                </p>
+                <button class="return-btn" onclick="closeModal('trace2')">Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur pour l'image en plein écran -->
+    <div class="fullscreen-image" onclick="closeFullscreen()">
+        <img src="" alt="Image en plein écran">
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Antoine Duarte</h4>
+                <p>Étudiant en BUT1 Informatique</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Me Contacter</h4>
+                <p><i class="fas fa-envelope"></i> antoine.duarte@edu.univ-fcomte.fr</p>
+                <p><i class="fas fa-map-marker-alt"></i> Belfort, France</p>
+                <div class="social-links">
+                    <a href="https://github.com/antoinezz25" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:antoine.duarte@edu.univ-fcomte.fr"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Antoine Duarte - Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
