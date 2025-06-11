@@ -101,6 +101,8 @@ body {
     position: relative;
     overflow: hidden;
     background-color: var(--section-bg);
+    margin: 0;
+    padding: 0;
 }
 
 #particles-js {
@@ -128,29 +130,18 @@ body {
 
 /* Sections communes */
 .section {
-    padding: 120px 0;  /* Augmentation du padding vertical */
-    background-color: var(--section-bg);
-    margin: 40px 0;    /* Ajout d'une marge entre les sections */
+    padding: 60px 0;
+    margin: 0;
 }
 
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 80px;  /* Augmentation de la marge sous les titres */
-    text-align: center;
-    position: relative;
+.about-section {
+    margin: 0;
+    background: #f8f9fa;
 }
 
-/* Ajout d'une ligne décorative sous les titres de section */
-.section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 2px;
+#projets {
+    margin: 0;
+    background: white;
 }
 
 /* Ajustement des conteneurs principaux */
@@ -218,6 +209,89 @@ body {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #6c5ce7; /* Changement pour le bon violet */
+    box-shadow: 0 2px 4px rgba(108, 92, 231, 0.2);
+}
+
+.about-container {
+    background: white;
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.skills-container h3 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.skill {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.skill i {
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.skill span {
+    display: block;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
 }
 
 .about-text {
@@ -814,7 +888,8 @@ body {
 /* Footer Styles */
 .footer {
     background-color: var(--background-color);
-    padding: 60px 0 20px;
+    padding: 40px 0 0 0;
+    margin: 0;
     border-top: 1px solid var(--border-color);
 }
 
@@ -954,6 +1029,7 @@ body {
 
 .modal-text {
     padding: 0 20px;
+    margin-top: 30px;
 }
 
 .modal-description {
@@ -1026,4 +1102,18 @@ body {
 .return-btn:active {
     transform: translateY(1px);
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.image-container {
+    margin-bottom: 30px;
+}
+
+.image-caption {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
 }
